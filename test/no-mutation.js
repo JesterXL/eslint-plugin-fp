@@ -63,6 +63,12 @@ ruleTester.run('no-mutation', rule, {
       ]}]
     },
     {
+      code: 'foo["bar"] = {};',
+      options: [{exceptions: [
+        {property: 'bar'}
+      ]}]
+    },
+    {
       code: 'baz.propTypes = {};',
       options: [{exceptions: [
         {property: 'propTypes'}
