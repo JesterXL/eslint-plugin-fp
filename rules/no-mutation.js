@@ -66,6 +66,7 @@ function isExempted(exceptions, node) {
 }
 
 const create = function (context) {
+  // console.log("no-mutation context:", context)
   const options = context.options[0] || {};
   const acceptCommonJs = options.commonjs;
   const exceptions = _.map(makeException, options.exceptions);

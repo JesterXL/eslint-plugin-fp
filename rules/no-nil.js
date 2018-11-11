@@ -22,9 +22,27 @@ const endsWithReturnStatement = _.flow(
   _.matches({type: 'ReturnStatement'})
 );
 
+const parentIsConstructor = node =>
+  _.get('parent.kind', node) === 'constructor'
+
+const classConstructorsAreAllowed =
+    _.find(
+      config => _.get('allowConstructors', config) === true
+    )
+
+const blockStatementDoesNotEndWithReturnStatement = node =>
+  _.get('body.type', node) === 'BlockStatement'
+  && !endsWithReturnStatement(_.get('body.body', node))
+
+const isClassConstructorAndTheyAreAllowed = node => options =>
+  parentIsConstructor(node)
+  && classConstructorsAreAllowed(options)
+
 function reportFunctions(context, node) {
-  if (node.body.type === 'BlockStatement' &&
-    !endsWithReturnStatement(node.body.body)
+  const options = _.getOr([], 'options', context)
+  if (
+    blockStatementDoesNotEndWithReturnStatement(node)
+    && isClassConstructorAndTheyAreAllowed(node)(options) === false
   ) {
     context.report({
       node,
