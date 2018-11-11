@@ -1,7 +1,8 @@
-# eslint-plugin-fp [![Build Status](https://travis-ci.org/jfmengels/eslint-plugin-fp.svg?branch=master)](https://travis-ci.org/jfmengels/eslint-plugin-fp)
+# What
 
-ESLint rules for functional programming
+ESLint rules for functional programming.
 
+*NOTE*: This is a fork from [https://github.com/jfmengels/eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp). I looked at the 33 forks at the time and none were up to date. So, I forked it, merged in 2 of the outstanding PR's, and added some missing features (allows constructor, using classes if you extend React.Component, switch statements that have a default with a return value don't violate `fp/no-nil`, etc).
 
 ## Install
 
