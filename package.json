@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "xo && nyc ava",
-    "update-md": "inject-in-tag ./rule-description.js readme.md"
+    "update-md": "inject-in-tag ./rule-description.js README.md"
   },
   "files": [
     "index.js",
@@ -42,16 +42,26 @@
   "dependencies": {
     "create-eslint-index": "^1.0.0",
     "eslint-ast-utils": "^1.0.0",
-    "lodash": "^4.13.1",
-    "req-all": "^0.1.0"
+    "import-modules": "^1.1.0",
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "ava": "^0.17.0",
     "eslint-ava-rule-tester": "^0.1.1",
     "inject-in-tag": "^1.1.1",
     "nyc": "^6.4.4",
     "pify": "^2.3.0",
     "xo": "^0.15.1"
+=======
+    "ava": "~0.21.0",
+    "eslint": "^4.4.0",
+    "eslint-ava-rule-tester": "^2.0.2",
+    "inject-in-tag": "^1.1.1",
+    "nyc": "^11.1.0",
+    "pify": "^3.0.0",
+    "xo": "~0.18.2"
+>>>>>>> graingert/merge-plugin-better
   },
   "peerDependencies": {
     "eslint": ">=3"
