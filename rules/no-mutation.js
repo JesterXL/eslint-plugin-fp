@@ -42,18 +42,21 @@ function errorMessage(isCommonJs) {
   return baseMessage + (isCommonJs ? '. You may want to activate the `commonjs` option for this rule' : '');
 }
 
-function makeException(exception) {
+function makeExceptions(exception) {
   if (!exception.object && !exception.property) {
     return _.stubFalse;
   }
-  let query = {type: 'MemberExpression'};
-  if (exception.object) {
-    query = _.assign(query, {object: {type: 'Identifier', name: exception.object}});
-  }
+  let queries = [];
+  const query = {type: 'MemberExpression'};
   if (exception.property) {
-    query = _.assign(query, {property: {type: 'Identifier', name: exception.property}});
+    queries.push(_.assign(query, {property: {type: 'Identifier', name: exception.property}}));
+    queries.push(_.assign(query, {property: {type: 'Literal', value: exception.property}}));
   }
-  return _.matches(query);
+  if (exception.object) {
+    const objquery = {object: {type: 'Identifier', name: exception.object}};
+    queries = queries.length ? _.map(q => _.assign(q, objquery), queries) : [_.assign(query, objquery)];
+  }
+  return _.map(_.matches, queries);
 }
 
 function isExempted(exceptions, node) {
@@ -69,7 +72,7 @@ const create = function (context) {
   // console.log("no-mutation context:", context)
   const options = context.options[0] || {};
   const acceptCommonJs = options.commonjs;
-  const exceptions = _.map(makeException, options.exceptions);
+  const exceptions = _.flatMap(makeExceptions, options.exceptions);
   if (options.allowThis) {
     exceptions.push(_.matches({type: 'MemberExpression', object: {type: 'ThisExpression'}}));
   }
