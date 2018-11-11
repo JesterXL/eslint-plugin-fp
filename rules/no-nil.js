@@ -25,10 +25,11 @@ const endsWithReturnStatement = _.flow(
 const parentIsConstructor = node =>
   _.get('parent.kind', node) === 'constructor'
 
-const classConstructorsAreAllowed =
-    _.find(
-      config => _.get('allowConstructors', config) === true
-    )
+const classConstructorsAreAllowed = options =>
+    _.findIndex(
+      config => _.get('allowConstructors', config) === true,
+      options
+    ) > -1
 
 const blockStatementDoesNotEndWithReturnStatement = node =>
   _.get('body.type', node) === 'BlockStatement'
