@@ -1,9 +1,10 @@
 {
-  "name": "@jesterxl/eslint-plugin-fp",
+  "name": "@jesterxl/eslint-plugin-fp-jxl",
   "version": "1.0.0",
   "description": "ESLint rules for functional programming",
   "license": "MIT",
-  "repository": "jesterxl/eslint-plugin-fp",
+  "repository": "jesterxl/eslint-plugin-fp-jxl",
+  "private": false,
   "authors": [
     {
       "name": "Jeroen Engels",

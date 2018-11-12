@@ -53,3 +53,62 @@ function foo() {
   return 1;
 }
 ```
+
+## Option: Switch Default
+
+You may want switch statements with a `default` clause that returns a default, non-nil value.
+
+### Fail: Switch
+
+The following function will trigger the `fp/no-nil` as having no return value.
+
+```javascript
+const someFunction = (state, action) => {
+    switch (action.type) {
+      case 'SOME_ACTION': {
+        return assoc('anything', true, state);
+      }
+      default: {
+        return state;
+      }
+    }
+  }
+```
+
+### Pass: Switch
+
+You can turn this off via a configuration in your `.eslintrc` file by setting `allowSwitchDefault` to `true`:
+
+```json
+"rules": {
+  "fp/no-nil": ["error", {
+      "allowSwitchDefault": true
+  }],
+```
+
+Now it'll allow it to pass as long as your switch returns a non-nil value.
+
+## Option: Switch Default
+
+For `class` constructors, they typically do not return values.
+
+### Fail: constructor
+
+```javascript
+class Sup {
+    constructor() {
+    }
+}
+```
+
+### Pass: constructor
+
+To allow a constructor that doesn't return a value, add this option to the rule in your `.eslintrc`:
+
+```json
+"rules": {
+  "fp/no-nil": ["error", {
+      "allowConstructors": true
+  }],
+```
+

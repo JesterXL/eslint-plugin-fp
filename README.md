@@ -7,7 +7,7 @@ ESLint rules for functional programming.
 ## Install
 
 ```
-$ npm install --save-dev eslint eslint-plugin-fp
+$ npm install --save-dev eslint @jesterxl/eslint-plugin-fp-jxl
 ```
 
 ## Usage
@@ -127,3 +127,4 @@ See [ESLint documentation](http://eslint.org/docs/user-guide/configuring#extendi
 MIT © [Jeroen Engels](https://github.com/jfmengels)
 MIT © [Ivan Dmitriev](https://github.com/idmitriev)
 MIT © [Thomas Grainger](https://github.com/graingert)
+MIT © [Jesse Warden](https://github.com/jesterxl)

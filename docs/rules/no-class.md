@@ -23,3 +23,26 @@ function polygon(height, width) {
   };
 }
 ```
+
+## Option: Allow Extending React Components
+
+For those who cannot use Function Components and/or Hooks, using `class` will trigger this rule to fail.
+
+### Fail: React Class Component
+
+```javascript
+class Sup extends React.Component {
+    constructor() {
+    }
+}
+```
+
+### Pass: React Class Component
+
+To get it to pass, add a rule modication in your `.eslintrc` file. This will allow only classes that extend `React.Component` or `React`.
+
+```json
+"fp/no-class": ["error", {
+    "allowExtendingReactComponent": true
+}]
+```
