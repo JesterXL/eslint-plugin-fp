@@ -7,7 +7,7 @@ ESLint rules for functional programming.
 ## Install
 
 ```
-$ npm install --save-dev eslint @jesterxl/eslint-plugin-fp-jxl
+$ npm install --save-dev eslint eslint-plugin-fp-jxl
 ```
 
 ## Usage

@@ -1,5 +1,5 @@
 {
-  "name": "@jesterxl/eslint-plugin-fp-jxl",
+  "name": "eslint-plugin-fp-jxl",
   "version": "1.0.1",
   "description": "ESLint rules for functional programming",
   "license": "MIT",
