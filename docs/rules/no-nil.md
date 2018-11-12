@@ -54,7 +54,6 @@ function foo() {
 }
 ```
 
-<a name="switchdefault"></a>
 ## Option: Switch Default
 
 You may want switch statements with a `default` clause that returns a default, non-nil value.
@@ -89,7 +88,6 @@ You can turn this off via a configuration in your `.eslintrc` file by setting `a
 
 Now it'll allow it to pass as long as your switch returns a non-nil value.
 
-<a name="classconstructor"></a>
 ## Option: Class Constructor
 
 For `class` constructors, they typically do not return values.
