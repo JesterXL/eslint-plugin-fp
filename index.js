@@ -10,7 +10,7 @@ const externalRecommendedRules = {
 };
 
 const internalRecommendedRules = createIndex.createConfig({
-  plugin: 'fp',
+  plugin: 'fp-jxl',
   field: 'meta.docs.recommended'
 }, rules);
 

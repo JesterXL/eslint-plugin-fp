@@ -117,7 +117,7 @@ To enable this configuration, use the `extends` property in your `package.json`.
     "plugins": [
       "fp"
     ],
-    "extends": "plugin:fp/recommended"
+    "extends": "plugin:fp-jxl/recommended"
   }
 }
 ```
