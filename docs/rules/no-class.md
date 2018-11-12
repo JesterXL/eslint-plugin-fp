@@ -42,7 +42,7 @@ class Sup extends React.Component {
 To get it to pass, add a rule modication in your `.eslintrc` file. This will allow only classes that extend `React.Component` or `React`.
 
 ```json
-"fp/no-class": ["error", {
+"fp-jxl/no-class": ["error", {
     "allowExtendingReactComponent": true
 }]
 ```

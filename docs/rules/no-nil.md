@@ -81,7 +81,7 @@ You can turn this off via a configuration in your `.eslintrc` file by setting `a
 
 ```json
 "rules": {
-  "fp/no-nil": ["error", {
+  "fp-jxl/no-nil": ["error", {
       "allowSwitchDefault": true
   }],
 ```
@@ -107,7 +107,7 @@ To allow a constructor that doesn't return a value, add this option to the rule 
 
 ```json
 "rules": {
-  "fp/no-nil": ["error", {
+  "fp-jxl/no-nil": ["error", {
       "allowConstructors": true
   }],
 ```
