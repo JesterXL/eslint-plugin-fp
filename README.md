@@ -25,7 +25,7 @@ Configure it in `package.json`.
       "es6": true
     },
     "plugins": [
-      "fp"
+      "fp-jxl"
     ],
     "rules": {
       "fp-jxl/explicit-return": "off",
