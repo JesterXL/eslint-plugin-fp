@@ -1,6 +1,6 @@
 {
   "name": "@jesterxl/eslint-plugin-fp-jxl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint rules for functional programming",
   "license": "MIT",
   "repository": "jesterxl/eslint-plugin-fp-jxl",
@@ -15,7 +15,6 @@
       "name": "Ivan Dmitriev",
       "email": "iam@ivandmitriev.com",
       "url": "http://ivandmitriev.com"
-
     },
     {
       "name": "Thomas Grainger",
