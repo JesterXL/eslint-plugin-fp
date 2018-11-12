@@ -78,7 +78,7 @@
     "xo": "~0.18.2"
   },
   "peerDependencies": {
-    "eslint": ">=3"
+    "eslint": ">=5"
   },
   "xo": {
     "esnext": true,
