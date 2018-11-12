@@ -24,6 +24,7 @@ function polygon(height, width) {
 }
 ```
 
+<a name="classreactcomponent"></a>
 ## Option: Allow Extending React Components
 
 For those who cannot use Function Components and/or Hooks, using `class` will trigger this rule to fail.

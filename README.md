@@ -2,7 +2,7 @@
 
 ESLint rules for functional programming.
 
-*NOTE*: This is a fork from [https://github.com/jfmengels/eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp). I looked at the 33 forks at the time and none were up to date. So, I forked it, merged in 2 of the outstanding PR's, and added some missing features (allows constructor, using classes if you extend React.Component, switch statements that have a default with a return value don't violate `fp/no-nil`, etc).
+*NOTE*: This is a fork from [https://github.com/jfmengels/eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp). I looked at the 33 forks at the time and none were up to date. So, I forked it, merged in 2 of the outstanding PR's, and added some missing features (allow [class constructors](docs/rules/no-nil.md#classconstructor), using classes if you [extend React.Component](docs/rules/no-class.md#classreactcomponent), switch statements that have a [default with a return value](docs/rules/no-nil.md#switchdefault) don't violate `fp/no-nil`, etc).
 
 ## Install
 
