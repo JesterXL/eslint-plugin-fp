@@ -20,6 +20,9 @@ const isSuperCall = _.matches({
   }
 });
 
+const isConsole = node =>
+  _.get('expression.callee.object.name', node) === 'console'
+
 const report = (context, node) => {
   context.report({
     node,
@@ -27,11 +30,17 @@ const report = (context, node) => {
   });
 };
 
+// ["error", {"allowUseStrict": true, "allowConsole": true }]
 const create = function (context) {
   const options = context.options[0] || {};
   const allowUseStrict = options.allowUseStrict;
+  const allowConsole = options.allowConsole
   return {
     ExpressionStatement(node) {
+      // console.log("isConsole(node):", isConsole(node))
+      if(isConsole(node) && allowConsole) {
+        return
+      }
       if (hasSideEffect(node.expression) ||
         (isUseStrictStatement(node.expression) && allowUseStrict)
       ) {
@@ -43,6 +52,7 @@ const create = function (context) {
       report(context, node);
     },
     SequenceExpression(node) {
+      console.log("SequenceExpression::node:", node)
       if (!node.parent || node.parent.type !== 'ExpressionStatement') { // Avoid duplicate errors
         report(context, node);
       }

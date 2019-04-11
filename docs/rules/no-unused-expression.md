@@ -10,9 +10,16 @@ This rule supports the following options:
 
 You can set the options like this:
 
-```js
-"fp/no-unused-expression": ["error", {"allowUseStrict": true }]
+```javascript
+"fp-jxl/no-unused-expression": ["error", {"allowUseStrict": true }]
 ```
+
+- `allowConsole`: If set to `true`, will allow `console.log` and other console statements.
+
+```javascript
+"fp-jxl/no-unused-expression": ["error", {"allowConsole": true }]
+```
+example:
 
 ### Fail
 
